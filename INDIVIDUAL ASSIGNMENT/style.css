@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background: url("basketball-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  background-color: #fff;
+  background: transparent; /* nền hoàn toàn trong suốt */
+  padding: 30px;
+  border-radius: 30px;
+  border: 5px solid #000;
+  box-shadow: 10px 10px 0 #5f5fff, -10px -10px 0 #ff61f6;
+  animation: bounceIn 0.6s ease-in-out;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+}
+
+.left-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.portrait {
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #5f5fff, -6px -6px 0 #ff61f6;
+}
+
+.right-column {
+  background-image: url("cartoon-background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 20px;
+  border: 3px solid #ff61f6;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-column > * {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+h1 {
+  font-size: 32px;
+  text-shadow: 2px 2px #ccc;
+  color: #222;
+}
+
+p, li {
+  font-size: 18px;
+  color: #333;
+}
+
+ul {
+  list-style: square inside;
+}
+
+a.btn-secondary {
+  display: inline-block;
+  background-color: #00aaff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: 2px solid #000;
+}
+
+a.btn-secondary:hover {
+  background-color: #0077cc;
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng click */
+.clicked {
+  animation: bounceClick 0.4s ease;
+  color: #ff61f6 !important;
+  font-weight: bold;
+}
+
+@keyframes bounceClick {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2) rotate(1deg); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(100px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-20px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .right-column {
+    margin-top: 20px;
+  }
+}
+
+.click-effect:hover {
+  animation: hoverBounce 0.4s ease-in-out;
+  color: #ff61f6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes hoverBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15) rotate(1deg); }
+  100% { transform: scale(1); }
+}
+
+/* Phần thông tin giới thiệu */
+.intro {
+  text-align: center; /* Căn giữa phần tên và câu nói */
+  margin-top: 50px; /* Khoảng cách với phần trên */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.quote {
+  font-size: 16px; /* Kích thước chữ nhỏ hơn */
+  font-style: italic; /* Làm chữ nghiêng */
+  color: #121212; /* Màu chữ vàng sáng */
+  margin-top: 10px; /* Khoảng cách giữa tên và câu nói */
+  display: inline-block; /* Đảm bảo dòng chữ không bị lệch */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ cho chữ */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.quote:hover {
+  color: #ff61f6; /* Màu sắc thay đổi khi hover */
+  transform: scale(1.05); /* Tăng kích thước nhẹ */
+}

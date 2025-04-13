@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The universe inside - Nguyễn Sơn Hải</title>
+  <link rel="stylesheet" href="info-style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>The universe inside</h1>
+    <div class="info-grid">
+      <!-- Cột 1: Gia đình -->
+      <div class="info-card">
+        <img src="gia-dinh.jpg" alt="Gia đình" class="img-portrait">
+        <h3>Family</h3>
+        <p>Family is a solid foundation, always supported and loved by business in all circumstances.</p>
+      </div>
+
+      <!-- Cột 2: Bạn bè -->
+      <div class="info-card">
+        <img src="ban-be.jpg" alt="Bạn bè" class="img-landscape">
+        <h3>Friends</h3>
+        <p>Close friends with whom I share joys, sorrows and beautiful memories.</p>
+      </div>
+
+      <!-- Cột 3: Người yêu -->
+      <div class="info-card">
+        <img src="nguoi-yeu.jpg" alt="Người yêu" class="img-portrait">
+        <h3>Girl Friend</h3>
+        <p>The special person who always accompanies, shares and motivates me in life.</p>
+      </div>
+
+      
+      <div class="info-card">
+        <img src="bong-ro.jpg" alt="Bóng rổ" class="img-landscape">
+        <h3>Pet</h3>
+        <p>My little friend has been with me for 3 years.</p>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="index.html">← See you later, Alligator🐊</a>
+    </div>
+  </div>
+
+  <script>
+    // Hiệu ứng hover chữ
+    const cards = document.querySelectorAll('.info-card h3, .info-card p');
+    cards.forEach(el => {
+      el.addEventListener('mouseover', () => {
+        el.classList.add('hovered');
+      });
+      el.addEventListener('mouseout', () => {
+        el.classList.remove('hovered');
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+

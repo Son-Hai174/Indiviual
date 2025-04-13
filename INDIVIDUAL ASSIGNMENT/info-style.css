@@ -1,0 +1,156 @@
+/* Font và thiết lập nền */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo 2', sans-serif;
+  background: url('hinh-nen-hoat-hinh.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #121212;
+}
+
+/* Khung tổng của phần thông tin */
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  background: transparent; /* nền hoàn toàn trong suốt */
+  border-radius: 24px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* vẫn giữ bóng đổ nhẹ */
+  animation: fadeIn 1s ease-out; /* animation fade-in */
+}
+
+/* Animation: Fade-in từ từ khi load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tiêu đề */
+h1 {
+  font-size: 42px;
+  color: #121212; /* vàng sáng */
+  margin-bottom: 40px;
+}
+
+/* Lưới 4 cột chia làm 2 hàng */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.5px;   
+  row-gap: 60px;      
+  justify-items: center;
+}
+
+
+/* Khung từng cột thông tin */
+.info-card {
+  width: 100%;
+  max-width: 480px;
+  height: 390px; /* giảm chiều cao một chút */
+  background: rgba(255, 255, 255, 0.85);
+
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Animation: Lắc nhẹ khi hover */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-6px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.info-card:hover {
+  animation: bounce 0.6s ease;
+}
+
+/* Ảnh trong từng card */
+.info-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+/* Dạng ảnh dọc và ngang */
+.img-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.img-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+/* Tiêu đề nhỏ trong card */
+h3 {
+  font-size: 28px;
+  margin: 15px 0 10px;
+  color: #121212;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Đoạn văn trong card */
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hiệu ứng hover chữ */
+h3:hover, p:hover {
+  color: #121212;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px #facc15;
+}
+
+/* Link quay lại */
+.back-link {
+  margin-top: 40px;
+}
+
+.back-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #121212; /* màu chủ đạo */
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #121212;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-link a:hover {
+  background-color: #121212;
+  color: white;
+  transform: scale(1.05);
+}
+/* Media Queries - Thiết bị có chiều rộng nhỏ hơn 768px (Điện thoại hoặc Máy tính bảng) */
+@media screen and (max-width: 768px) {
+  .info-container {
+    display: block;
+    text-align: center;
+  }
+
+  .info-card {
+    width: 90%; /* Mỗi cột sẽ chiếm 90% chiều rộng */
+    margin: 10px auto;
+  }
+}
